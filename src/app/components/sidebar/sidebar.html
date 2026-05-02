@@ -1,0 +1,61 @@
+  <!-- ── SIDEBAR ─────────────────────────────────────── -->
+  <aside class="sidebar">
+ 
+    <div class="sb-section">
+      <!-- Angular: *ngFor="let item of navItems" [class.active]="activeNav===item.id" (click)="setNav(item.id)" -->
+      <div class="sb-item active"><i class="bi bi-folder2-open"></i> My Files</div>
+      <div class="sb-item"><i class="bi bi-clock-history"></i> Recent</div>
+      <div class="sb-item"><i class="bi bi-star"></i> Starred</div>
+      <div class="sb-item"><i class="bi bi-people"></i> Shared</div>
+      <div class="sb-item"><i class="bi bi-cloud-upload"></i> Sync</div>
+      <div class="sb-item"><i class="bi bi-trash3"></i> Recycle Bin</div>
+    </div>
+ 
+    <div class="sb-divider"></div>
+ 
+    <!-- Sort panel -->
+    <div class="sort-panel">
+      <div class="sort-title">Sort by</div>
+      <!-- Angular: *ngFor="let opt of sortOptions" [class.active]="sortBy===opt.key" (click)="setSortBy(opt.key)" -->
+      <div class="sort-option active" (click)="setSortActive(this)">
+        <span>Name</span><i class="bi bi-sort-alpha-down"></i>
+      </div>
+      <div class="sort-option" (click)="setSortActive(this)">
+        <span>Modified</span><i class="bi bi-calendar3"></i>
+      </div>
+      <div class="sort-option" (click)="setSortActive(this)">
+        <span>Size</span><i class="bi bi-bar-chart-line"></i>
+      </div>
+      <div class="sort-option" (click)="setSortActive(this)">
+        <span>Type</span><i class="bi bi-tag"></i>
+      </div>
+      <div class="sort-option" (click)="setSortActive(this)">
+        <span>Shared with</span><i class="bi bi-people"></i>
+      </div>
+    </div>
+ 
+    <div class="sb-divider"></div>
+ 
+    <!-- Filter chips -->
+    <div class="sort-panel">
+      <div class="sort-title">Filter type</div>
+      <div style="padding: 0 4px; display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;">
+        <!-- Angular: *ngFor="let f of filters" [class.active]="activeFilter===f" (click)="setFilter(f)" -->
+        <span class="filter-chip active" (click)="toggleChip(this)"><i class="bi bi-grid-3x3-gap-fill" style="font-size:10px"></i> All</span>
+        <span class="filter-chip" (click)="toggleChip(this)"><i class="bi bi-folder-fill" style="font-size:10px;color:#f0a500"></i> Folders</span>
+        <span class="filter-chip" (click)="toggleChip(this)"><i class="bi bi-file-earmark-word-fill" style="font-size:10px;color:#2b6fd9"></i> Docs</span>
+        <span class="filter-chip" (click)="toggleChip(this)"><i class="bi bi-file-earmark-image" style="font-size:10px;color:#1a9e6d"></i> Images</span>
+        <span class="filter-chip" (click)="toggleChip(this)"><i class="bi bi-film" style="font-size:10px;color:#e91e63"></i> Video</span>
+      </div>
+    </div>
+ 
+    <div class="sb-divider"></div>
+ 
+    <!-- Storage -->
+    <div class="storage-box">
+      <div class="stor-label"><i class="bi bi-hdd" style="margin-right:5px;color:var(--accent)"></i>Storage</div>
+      <div class="stor-bar"><div class="stor-fill"></div></div>
+      <div class="stor-note">3.8 GB of 10 GB used</div>
+    </div>
+ 
+  </aside>

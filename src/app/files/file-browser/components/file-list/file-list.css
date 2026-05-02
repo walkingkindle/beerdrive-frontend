@@ -1,0 +1,44 @@
+/* ── List View ────────────────────────────────────────── */
+  .file-list { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 24px; }
+  .list-header {
+    display: grid;
+    grid-template-columns: 36px 1fr 120px 110px 80px;
+    align-items: center;
+    padding: 7px 10px;
+    font-size: 11.5px; font-weight: 600;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+    user-select: none;
+  }
+  .list-header span { cursor: pointer; display: flex; align-items: center; gap: 4px; }
+  .list-header span:hover { color: var(--accent); }
+  .list-row {
+    display: grid;
+    grid-template-columns: 36px 1fr 120px 110px 80px;
+    align-items: center;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--border);
+    transition: background var(--tr);
+    cursor: pointer;
+    animation: fadeIn .25s ease both;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .list-row:last-child { border-bottom: none; }
+  .list-row:hover { background: var(--hover); }
+  .list-row.selected { background: var(--blue-lt); }
+  .list-icon { font-size: 18px; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; border-radius: 6px; }
+  .list-icon.folder { color: #f0a500; background: #fff4e0; }
+  .list-icon.word   { color: #2b6fd9; background: #e3eeff; }
+  .list-icon.excel  { color: #1a9e6d; background: #e6faf1; }
+  .list-icon.pdf    { color: #d93025; background: #fde9e9; }
+  .list-icon.image  { color: #0f8050; background: #e6f9f1; }
+  .list-icon.zip    { color: #7c4dff; background: #f3eefe; }
+  .list-icon.video  { color: #e91e63; background: #fff0f5; }
+  .list-icon.ppt    { color: #d44500; background: #fdeee6; }
+ 
+  .row-name { font-size: 13px; font-weight: 400; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 10px; }
+  .row-name small { display: block; font-size: 11px; color: var(--muted); }
+  .row-shared { font-size: 12px; color: var(--muted); }
+  .row-date   { font-size: 12px; color: var(--muted); }
+  .row-size   { font-size: 12px; color: var(--muted); }

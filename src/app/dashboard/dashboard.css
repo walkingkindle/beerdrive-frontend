@@ -1,0 +1,18 @@
+  /* ── Main Content ─────────────────────────────────────── */
+  .main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    padding: 20px 24px;
+    animation: fadeUp .32s ease .05s both;
+  }
+  @keyframes fadeUp {
+    from { opacity:0; transform: translateY(14px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+ 
+  @media (max-width: 768px) {
+    :root { --sidebar-w: 0px; }
+    .sidebar { display: none; }
+    .list-header, .list-row { grid-template-columns: 36px 1fr 100px; }
+    .row-shared, .row-size { display: none; }
+  }

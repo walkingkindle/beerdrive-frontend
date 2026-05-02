@@ -1,0 +1,32 @@
+/* Breadcrumb */
+.breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  margin-top: 20px;
+}
+.bc-item {
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 5px;
+  transition:
+    background var(--tr),
+    color var(--tr);
+}
+.bc-item:hover {
+  background: var(--hover);
+  color: var(--accent);
+}
+.bc-item.active {
+  color: var(--text);
+  font-weight: 500;
+  cursor: default;
+  background: transparent;
+}
+.bc-sep {
+  color: var(--border);
+  font-size: 15px;
+}

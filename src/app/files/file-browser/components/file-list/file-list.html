@@ -1,0 +1,33 @@
+<div class="file-list list-view">
+  <div class="list-header">
+    <div></div>
+    <span>Name</span>
+    <span>Shared</span>
+    <span>Modified</span>
+    <span>Size</span>
+  </div>
+
+  <div class="list-row" *ngFor="let file of files" (click)="select.emit(file)">
+    <div class="list-icon" [ngClass]="file.type">
+      <i class="bi" [ngClass]="getIcon(file.type)"></i>
+    </div>
+
+    <div class="row-name">
+      {{ file.name }}
+      <small>
+        {{
+          file.type === 'folder' ? 'Folder · ' + file.itemsCount + ' items' : getLabel(file.type)
+        }}
+      </small>
+    </div>
+
+    <div class="row-shared">
+      <span *ngIf="file.shared" class="badge-shared">
+        <i class="bi bi-people-fill"></i> {{ file.shared }}
+      </span>
+    </div>
+
+    <div class="row-date">{{ file.modified }}</div>
+    <div class="row-size">{{ file.type === 'folder' ? '—' : file.size }}</div>
+  </div>
+</div>

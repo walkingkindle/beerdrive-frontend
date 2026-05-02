@@ -1,0 +1,22 @@
+<div class="file-grid grid-view">
+  <div
+    class="file-card"
+    *ngFor="let file of files"
+    (click)="select.emit(file)">
+
+    <div class="thumb" [ngClass]="getThumbClass(file.type)">
+      <i class="bi" [ngClass]="getIcon(file.type)" [style.color]="getColor(file.type)"></i>
+    </div>
+
+    <div class="cb"><i class="bi bi-check"></i></div>
+    <div class="more-btn"><i class="bi bi-three-dots-vertical"></i></div>
+
+    <div class="card-body-fd">
+      <div class="card-name">{{ file.name }}</div>
+      <div class="card-meta">
+        {{ file.type === 'folder' ? file.itemsCount + ' items' : file.size }}
+      </div>
+    </div>
+
+  </div>
+</div>

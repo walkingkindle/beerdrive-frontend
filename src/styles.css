@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+/* ── Variables ────────────────────────────────────────── */
+:root {
+  --bg: #f3f6fb;
+  --surface: #ffffff;
+  --border: #e4eaf3;
+  --sidebar-w: 230px;
+  --nav-h: 54px;
+  --blue: #0f6cbd;
+  --blue-lt: #e8f1fb;
+  --blue-mid: #d0e4f7;
+  --text: #1a2332;
+  --muted: #6b7a90;
+  --hover: #edf3fb;
+  --accent: #0078d4;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(15, 108, 189, 0.08);
+  --tr: 180ms ease;
+}
+
+/* ── Reset / Base ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.heading {
+  font-family: 'Outfit', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Hidden class ─────────────────────────────────────── */
+.view-grid .list-view,
+.view-list .grid-view {
+  display: none !important;
+}
+
+/* ── Utility ──────────────────────────────────────────── */
+.badge-shared {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10.5px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--blue-lt);
+  color: var(--accent);
+  font-weight: 500;
+}
+.badge-shared i {
+  font-size: 11px;
+}

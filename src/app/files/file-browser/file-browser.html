@@ -1,0 +1,16 @@
+<div class="toolbar">
+  <button (click)="viewMode = 'grid'">Grid</button>
+  <button (click)="viewMode = 'list'">List</button>
+</div>
+
+<app-file-grid
+  *ngIf="viewMode === 'grid'"
+  [files]="files"
+  (select)="onSelect($event)">
+</app-file-grid>
+
+<app-file-list
+  *ngIf="viewMode === 'list'"
+  [files]="files"
+  (select)="onSelect($event)">
+</app-file-list>

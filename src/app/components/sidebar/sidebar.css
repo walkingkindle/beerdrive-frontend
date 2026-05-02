@@ -1,0 +1,194 @@
+.sidebar {
+  position: fixed;
+  top: var(--nav-h);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  animation: slideInLeft 0.28s ease both;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+.sb-section {
+  padding: 4px 10px;
+}
+.sb-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 6px 4px;
+}
+.sb-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition:
+    background var(--tr),
+    color var(--tr);
+  position: relative;
+}
+.sb-item i {
+  font-size: 15px;
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+  color: var(--muted);
+  transition: color var(--tr);
+}
+.sb-item:hover {
+  background: var(--hover);
+  color: var(--accent);
+}
+.sb-item:hover i {
+  color: var(--accent);
+}
+.sb-item.active {
+  background: var(--blue-lt);
+  color: var(--accent);
+  font-weight: 500;
+}
+.sb-item.active i {
+  color: var(--accent);
+}
+.sb-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 0 3px 3px 0;
+}
+.sb-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 14px;
+}
+
+/* Storage bar */
+.storage-box {
+  margin: 10px 14px 0;
+  padding: 12px 14px;
+  background: var(--blue-lt);
+  border-radius: var(--radius);
+  border: 1px solid var(--blue-mid);
+}
+.storage-box .stor-label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 7px;
+}
+.stor-bar {
+  height: 5px;
+  background: var(--blue-mid);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.stor-fill {
+  height: 100%;
+  width: 38%;
+  background: var(--accent);
+  border-radius: 10px;
+  animation: growBar 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+}
+.stor-note {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+/* Sort panel inside sidebar */
+.sort-panel {
+  padding: 4px 10px 8px;
+}
+.sort-panel .sort-title {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 6px 6px;
+}
+.sort-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--text);
+  transition: background var(--tr);
+}
+.sort-option:hover {
+  background: var(--hover);
+}
+.sort-option.active {
+  color: var(--accent);
+  font-weight: 500;
+}
+.sort-option i {
+  font-size: 13px;
+  color: var(--muted);
+}
+.sort-option.active i {
+  color: var(--accent);
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  margin: 2px 3px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  transition: all var(--tr);
+}
+.filter-chip:hover,
+.filter-chip.active {
+  background: var(--blue-lt);
+  border-color: var(--blue-mid);
+  color: var(--accent);
+}
